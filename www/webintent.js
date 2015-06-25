@@ -49,6 +49,13 @@
         }, 'WebIntent', 'getExtra', [params]);
     };
 
+    WebIntent.prototype.getUriExtra = function(params, success, fail) {
+        return cordova.exec(function(args) {
+            success(args);
+        }, function(args) {
+            fail(args);
+        }, 'WebIntent', 'getUriExtra', [params]);
+    };
 
     WebIntent.prototype.onNewIntent = function(callback) {
         return cordova.exec(function(args) {
